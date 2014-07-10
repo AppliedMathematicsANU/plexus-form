@@ -90,6 +90,17 @@ var makeTitle = function(description, errors) {
 var wrappedField = function(props, field) {
   var extra = ou.getIn(props.schema, ['x-hints', 'form', 'classes']);
   var title = makeTitle(props.schema.description, props.errors);
+
+  var help = (props.showHelp
+              ? props.showHelp({ path: props.path })
+              : null);
+
+  var error = (props.showError
+               ? props.showError({ path     : props.path,
+                                   value    : props.getValue(props.path),
+                                   errors   : props.errors })
+               : null);
+
   var classes = [].concat(errorClass(props.errors) || [],
                           'form-element',
                           extra || []);
@@ -98,7 +109,9 @@ var wrappedField = function(props, field) {
                  title    : title },
                $.label({ "htmlFor": props.key },
                        props.schema.title),
-               field);
+               error,
+               field,
+               help);
 };
 
 
@@ -438,6 +451,8 @@ var Form = React.createClass({
     var schema = this.props.schema;
     var fields = makeFields({
       schema   : this.props.schema,
+      showHelp : this.props.showHelp,
+      showError: this.props.showError,
       hints    : this.props.hints,
       path     : [],
       update   : this.setValue,

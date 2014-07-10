@@ -51,3 +51,14 @@ html {
     display: block;
     height: 0;
 }
+
+.form-help, .form-error {
+    display: inline-block;
+    border: thin solid;
+    border-radius: 50%;
+    padding: 0 4px;
+}
+
+.form-error {
+    padding: 0 6px;
+}

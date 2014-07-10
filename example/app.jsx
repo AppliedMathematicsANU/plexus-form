@@ -133,6 +133,33 @@ var SchemaEditor = React.createClass({
 });
 
 
+var Help = React.createClass({
+  render: function() {
+    return (
+        <span className='form-help' title={this.props.path}>
+        ?
+        </span>
+    );
+  }
+});
+
+
+var Error = React.createClass({
+  render: function() {
+    var errors = (this.props.errors || []).join(',');
+
+    if (errors)
+      return (
+          <span className='form-error' title={errors}>
+          !
+          </span>
+      );
+    else
+      return (<span/>);
+  }
+});
+
+
 var FormDemoPage = React.createClass({
   displayName: 'FormDemoPage',
 
@@ -169,6 +196,8 @@ var FormDemoPage = React.createClass({
               onSubmit={this.onFormSubmit}
               schema={this.state.schema}
               validate={validate}
+              showHelp={Help}
+              showError={Error}
             />
           </li>
           <li className="flexItem">
