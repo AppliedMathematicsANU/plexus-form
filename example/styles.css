@@ -27,8 +27,13 @@ html {
     color: red;
 }
 
+.form-section {
+    border: 2px solid gray;
+}
+
 .form-subsection {
-    padding: 0.5em;
+    border: none;
+    padding: 0;
     margin: 0.5em 0;
 }
 
@@ -36,29 +41,34 @@ html {
     font-weight: bold;
 }
 
-.form-element label {
-    float: left;
-    clear: left;
-    text-align: right;
-    width: 8em;
-    margin-right: 1em;
+.form-subsection .form-section-title {
+    padding: 5px 0;
 }
 
-.form-element:after {
-    clear: both;
-    content: " ";
-    visibility: hidden;
-    display: block;
-    height: 0;
+.form-element {
+    position: relative;
+}
+
+.form-element label {
+    display: inline-block;
+    width: 10em;
 }
 
 .form-help, .form-error {
     display: inline-block;
     border: thin solid;
     border-radius: 50%;
+    margin: 0 2px;
+}
+
+.form-help {
     padding: 0 4px;
 }
 
 .form-error {
     padding: 0 6px;
+}
+
+.invisible {
+    visibility: hidden;
 }

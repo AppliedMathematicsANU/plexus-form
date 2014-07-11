@@ -63,7 +63,7 @@ var schema = {
               enum: [ "yes" ]
             },
             fave: {
-              title: "Your favourite colour is",
+              title: "Your favourite colour",
               type: "string",
               enum: [
                 "", "red", "green", "blue", "yellow", "orange", "purple", "other"
@@ -147,15 +147,13 @@ var Help = React.createClass({
 var Error = React.createClass({
   render: function() {
     var errors = (this.props.errors || []).join(',');
+    var classes = 'form-error' + (errors ? '' : ' invisible');
 
-    if (errors)
-      return (
-          <span className='form-error' title={errors}>
-          !
-          </span>
-      );
-    else
-      return (<span/>);
+    return (
+        <span className={classes} title={errors}>
+        !
+        </span>
+    );
   }
 });
 
