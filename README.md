@@ -1,6 +1,10 @@
-# plexus-form
+# ATTENTION!
 
-**=== ATTENTION: THIS PROJECT IS NO LONGER BEING MAINTAINED ===**
+**THIS PROJECT IS NO LONGER ACTIVE.**
+
+A maintained fork can be found at [react-json-editor](https://github.com/ismaelga/react-json-editor) (h/t [@ismaelga](https://github.com/ismaelga)).
+
+# plexus-form
 
 A dynamic form component for [React](http://facebook.github.io/react/) using a
 specification format based on [JSON-Schema](http://json-schema.org/).
